@@ -1,0 +1,8 @@
+{
+  "name": "Remix: CrècheManager SaaS",
+  "description": "Une solution SaaS moderne pour la gestion des enfants et des paiements mensuels en crèche, incluant le suivi pluriannuel et le calcul automatique des restes à payer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "crechemanager",
+  "private": true,
+  "version": "1.0.0",
+  "main": "electron.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "start": "electron .",
+    "dist": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.crechemanager.app",
+    "productName": "CrecheManager",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+  "electron.js",
+  "dist/**/*",
+  "backend/server.cjs",
+  "backend/node_modules/**/*",
+  "backend/package.json"
+],
+"asarUnpack": [
+  "backend/**/*"
+],
+    "extraResources": [
+      {
+        "from": "database",
+        "to": "database"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerHeaderIcon": "icon.ico"
+    }
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.39.7",
+    "@tailwindcss/vite": "^4.3.3",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "electron": "^28.3.3",
+    "electron-builder": "^26.15.3",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
